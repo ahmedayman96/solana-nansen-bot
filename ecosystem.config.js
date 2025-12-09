@@ -3,7 +3,7 @@ module.exports = {
         {
             name: "solana-bot",
             script: "./main.py",
-            interpreter: "./venv/bin/python",
+            interpreter: "/home/ubuntu/solana-nansen-bot/venv/bin/python",
             cwd: "./",
             watch: true,
             ignore_watch: ["*.db", "*.db-journal", "data/store.py"], // Ignore DB changes to prevent restart loops
