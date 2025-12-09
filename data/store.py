@@ -106,7 +106,8 @@ class Store:
                 trade_data['type'],
                 trade_data['amount_sol'],
                 trade_data['price'],
-                trade_data['time'].isoformat(),
+                # Ensure we store naive datetimes as UTC ISO string with Z
+                trade_data['time'].strftime('%Y-%m-%dT%H:%M:%S.%fZ') if trade_data['time'].tzinfo is None else trade_data['time'].isoformat(),
                 trade_data.get('pnl', 0.0),
                 trade_data.get('pnl_percent', 0.0),
                 trade_data.get('reasoning', "")

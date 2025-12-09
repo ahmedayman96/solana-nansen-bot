@@ -19,6 +19,7 @@ module.exports = {
             cwd: "./dashboard",
             env: {
                 PORT: 3000,
+                HOSTNAME: "0.0.0.0", // Force binding to all IPv4 interfaces
                 NODE_ENV: "production"
             }
         }

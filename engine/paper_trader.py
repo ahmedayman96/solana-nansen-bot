@@ -43,12 +43,11 @@ class PaperTrader:
         )
         self.positions[token_address] = position
         
-        trade_data = {
             "type": "BUY",
             "token": token_address,
             "amount_sol": amount_sol,
             "price": price_per_token,
-            "time": datetime.now(),
+            "time": datetime.utcnow(),
             "reasoning": "Buy Wave Detected" # Placeholder, can be passed in
         }
         self.trade_history.append(trade_data)
@@ -82,7 +81,7 @@ class PaperTrader:
             "price": price_per_token,
             "pnl": pnl,
             "pnl_percent": pnl_percent,
-            "time": datetime.now(),
+            "time": datetime.utcnow(),
             "reasoning": "Target Exit Time Reached" # Default
         }
         self.trade_history.append(trade_data)
