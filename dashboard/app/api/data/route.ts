@@ -49,7 +49,7 @@ export async function GET() {
         const [trades, portfolio, heartbeat, logs] = await Promise.all([
             getTrades(),
             getPortfolio(),
-            getHeartbeat(),
+            getHeartbeat() as Promise<{ timestamp: string } | null>,
             getLogs()
         ]);
 
